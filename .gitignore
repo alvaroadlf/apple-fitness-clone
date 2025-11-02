@@ -1,0 +1,29 @@
+# Node modules
+node_modules/
+
+# Build output
+build/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm/
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# SASS cache
+.sass-cache/
+
+# Misc
+.DS_Store
+*.tgz
+*.zip

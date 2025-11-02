@@ -8,6 +8,7 @@ import './VideoPlayer.css';
 
 const VideoPlayer = ({ video, onClose }) => {
   const [hasMarkedComplete, setHasMarkedComplete] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   
   const handleMarkComplete = () => {
     if (!hasMarkedComplete) {
@@ -33,7 +34,8 @@ const VideoPlayer = ({ video, onClose }) => {
       setHasMarkedComplete(true);
       
       // Show success message
-      alert('Workout completed! Great job! 🎉');
+      setShowSuccessMessage(true);
+      setTimeout(() => setShowSuccessMessage(false), 3000);
     }
   };
   
@@ -65,6 +67,11 @@ const VideoPlayer = ({ video, onClose }) => {
             <span className="duration">⏱️ {video.duration}</span>
             <span className="difficulty">📊 {video.difficulty}</span>
           </div>
+          {showSuccessMessage && (
+            <div className="success-message">
+              🎉 Workout completed! Great job!
+            </div>
+          )}
           <div className="video-actions">
             <button 
               className={`complete-button ${hasMarkedComplete ? 'completed' : ''}`}

@@ -1,5 +1,8 @@
 // Storage utility for managing user data in localStorage and iCloud sync
 
+// Constants
+const MILLISECONDS_PER_DAY = 86400000;
+
 const STORAGE_KEYS = {
   USER_PREFERENCES: 'fitness_user_preferences',
   WORKOUT_HISTORY: 'fitness_workout_history',
@@ -111,7 +114,7 @@ export const updateProgress = (workout) => {
   // Update streak
   if (lastWorkout === today) {
     // Already worked out today, no streak change
-  } else if (lastWorkout === new Date(Date.now() - 86400000).toDateString()) {
+  } else if (lastWorkout === new Date(Date.now() - MILLISECONDS_PER_DAY).toDateString()) {
     // Worked out yesterday, increase streak
     progress.streak += 1;
   } else if (!lastWorkout) {
@@ -124,7 +127,7 @@ export const updateProgress = (workout) => {
   
   // Update totals
   progress.totalWorkouts += 1;
-  const duration = parseInt(workout.duration) || 0;
+  const duration = parseInt(workout.duration, 10) || 0;
   progress.totalMinutes += duration;
   progress.lastWorkoutDate = new Date().toISOString();
   

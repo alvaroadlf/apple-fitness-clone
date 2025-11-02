@@ -1,0 +1,200 @@
+.workout-categories {
+  min-height: 100vh;
+}
+
+.category-header {
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.category-banner {
+  padding: 4rem 2rem 3rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.category-banner-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.category-icon-large {
+  font-size: 5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.category-banner h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.category-banner p {
+  font-size: 1.3rem;
+  opacity: 0.95;
+}
+
+.videos-section {
+  padding: 0 2rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.videos-section h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.video-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.video-card.completed {
+  border: 2px solid #00B4D8;
+}
+
+.video-thumbnail {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+
+.video-thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-duration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.completed-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #00B4D8;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.video-info {
+  padding: 1rem;
+}
+
+.video-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.video-instructor {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 0.75rem;
+}
+
+.video-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.video-difficulty {
+  padding: 0.25rem 0.75rem;
+  background: #333;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #00B4D8;
+  font-weight: 500;
+}
+
+.video-duration-text {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .category-banner {
+    padding: 3rem 1rem 2rem;
+  }
+  
+  .category-icon-large {
+    font-size: 3.5rem;
+  }
+  
+  .category-banner h1 {
+    font-size: 2rem;
+  }
+  
+  .category-banner p {
+    font-size: 1rem;
+  }
+  
+  .videos-section {
+    padding: 0 1rem 1rem;
+  }
+  
+  .videos-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .videos-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
